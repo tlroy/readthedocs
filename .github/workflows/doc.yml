@@ -24,7 +24,6 @@ jobs:
   deploy:
     name: Deploy Github pages
     needs: build_docs
-    if: ${{ github.ref == 'refs/heads/readthedocs' }}
     permissions:
       pages: write
       id-token: write
