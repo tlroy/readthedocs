@@ -21,6 +21,12 @@ jobs:
           . /home/firedrake/firedrake/bin/activate
           cd docs
           make html
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          name: github-pages
+          path: /__w/readthedocs/docs/build/html
+          retention-days: 1
   deploy:
     name: Deploy Github pages
     needs: build_docs
